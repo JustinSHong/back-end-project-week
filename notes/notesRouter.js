@@ -92,16 +92,7 @@ router.route("/:id").put((req, res) => {
                         message: "Note does not exist"
                     });
                 } else {
-                    Note.find()
-                        .then(notes => {
-                            res.status(200).json(notes);
-                        })
-                        .catch(err => {
-                            res.status(500).json({
-                                errorMessage:
-                                    "There was an error retrieving notes"
-                            });
-                        });
+                    res.status(200).json(note);
                 }
             })
             .catch(err => {
